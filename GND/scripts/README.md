@@ -9,7 +9,7 @@ A preprocessed [JSON file](../subjects-taxonomy/GND-subjects-classification.json
 
 ### ⚙️ Workflow
 
-Use [`subject_gnd_formatting.py`](subject_gnd_formatting.py) to generate the formatted JSON taxonomy.
+Use [`subject_gnd_formatting.py`](subject_gnd_formatting.py) to generate the human-readable formatted JSON taxonomy.
 
 1. **Schema definition**  
    The [schema.json](../subjects-taxonomy/schema.json) file specifies the structure of each subject entry. Not all attributes appear in every record; missing fields are simply omitted.
@@ -18,7 +18,7 @@ Use [`subject_gnd_formatting.py`](subject_gnd_formatting.py) to generate the for
    Update the script to point to your local MARC 21 XML source and the GND classification JSON:
    ```python
    subject_gnd_filepath = '../authorities-gnd-sachbegriff_dnbmarc_yyyymmdd.mrc.xml'
-   gnd_subjects = read_json_file('../dataset/GND-subjects-classification.json')
+   gnd_subjects = read_json_file('../subjects-taxonomy/GND-subjects-classification.json')
    ```
 
 3. **Run the conversion**
