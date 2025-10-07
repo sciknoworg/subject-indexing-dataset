@@ -9,8 +9,7 @@ This dataset empowers the research community 🤝 to build advanced LLM-based se
 
 To support system development, we release three key components:
 
-- [**GND-subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy):  
-  Human-readable formatted version of the GND subjects taxonomy.
+- [**GND**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND): Related resources to the GND including human-readable formatted version of the GND subjects taxonomy.
 
 - [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset):  
   Open-access annotated technical records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with GND subjects and domain labels. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
