@@ -17,8 +17,7 @@ Remarks on the SKOS-Mapping:
 
 - [**gnd-how-to**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/gnd-how-to): Provides detailed, step-by-step instructions on how to access and download the raw data for the GND *Sachbegriff* (subject term) file from the original source. This guide helps users understand the provenance and structure of the underlying authority data.
 
-- [**🌟 subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/subjects-taxonomy):  
-  **This is the main repository of interest for most researchers.** It contains the fully decoded, human-readable version of the GND subjects taxonomy. These files provide a comprehensive mapping of subject identifiers to their corresponding labels and hierarchical relations, enabling straightforward use in machine learning or knowledge graph applications.  
+- [**🌟 subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/subjects-taxonomy): **This is the main repository of interest for most researchers.** It contains the fully decoded, human-readable version of the GND subjects taxonomy. These files provide a comprehensive mapping of subject identifiers to their corresponding labels and hierarchical relations, enabling straightforward use in machine learning or knowledge graph applications.  
 
   The interested researcher can ignore the other repositories and directly download the GND taxonomy released here.
 
