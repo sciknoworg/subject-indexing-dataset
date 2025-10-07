@@ -21,7 +21,7 @@ Both the GND and the open-access records have been reorganized, formatted with h
 
 - [**GND-subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy): This subfolder includes the human-readable formatted GND subjects taxonomy. 
 
-- : This subfolder contains open access annotated technical records as precreated train/dev/test splits
+- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset): This subfolder contains open access annotated technical records as precreated train/dev/test splits
 
 - [**eval-script**](https://github.com/jd-coderepos/subject-indexing/tree/main/eval-script): This subfolder contains the evaluation script with quantitative metrics viz. precision@k, recall@k, f1@k, recall_precision@k, and ndcg@k which are relevant to information retrieval systems and which can be applied to the system predictions when applied to our released gold-standard annotated dataset to get performance scores for subject indexing.
 
