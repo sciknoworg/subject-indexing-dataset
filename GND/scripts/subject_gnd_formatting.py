@@ -100,7 +100,7 @@ def format_gnd_subject_code(code):
         return code
 
 #The path for the GND subject specification file 
-subject_gnd_filepath = '../../../../../authorities-gnd-sachbegriff_dnbmarc_20240213.mrc.xml'
+subject_gnd_filepath = '../how-to/authorities-gnd-sachbegriff_dnbmarc_20250916.mrc.xml'
 
 #XML Namespace used in the MARC 21 GND file
 xml_namespace = '{http://www.loc.gov/MARC21/slim}'
@@ -109,7 +109,7 @@ xml_namespace = '{http://www.loc.gov/MARC21/slim}'
 formatted_gnd_subjects = []
 
 #All GND Subject codes 
-gnd_subjects = read_json_file('../dataset/gnd-classification-for-gnd-subjects.json')
+gnd_subjects = read_json_file('../subjects-taxonomy/GND-subjects-classification.json')
 
 #Only TIB Core GND Subject codes
 tib_core_subjects = [subj for subj in gnd_subjects if subj['TIB Core']]
@@ -199,4 +199,4 @@ for record in root.findall(f'{xml_namespace}record'):
 formatted_gnd_subjects = sorted(formatted_gnd_subjects, key = lambda k: format_gnd_subject_code(k['Classification Number']))
 
 #Saving all the subject descriptions as a JSON file
-save_json_file('../dataset','GND-Subjects-all.json', formatted_gnd_subjects)
+save_json_file('../subjects-taxonomy','GND-subjects.json', formatted_gnd_subjects)
