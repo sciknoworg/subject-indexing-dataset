@@ -9,13 +9,13 @@ This dataset empowers the research community 🤝 to build advanced LLM-based se
 
 To support system development, we release three key components:
 
-- [**GND**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND): Related resources to the GND including human-readable formatted version of the GND subjects taxonomy.
+- [**GND**](./GND): Related resources to the GND including human-readable formatted version of the GND subjects taxonomy.
 
-- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset): Open-access annotated technical records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with GND subjects and domain labels. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
+- [**technical-records-dataset**](./technical-records-dataset): Open-access annotated technical records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with GND subjects and domain labels. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
 
   Both the GND taxonomy and the open-access records have been reorganized and reformatted with human-readable tags for seamless machine learning use. Since standardized library taxonomies often rely on complex legacy codes ⏳, we consulted subject specialists to preprocess and simplify the data. This allows researchers to focus on developing ML models rather than decoding intricate data formats.
 
-- [**evaluation**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/evaluation): Evaluation scripts providing quantitative metrics—`precision@k`, `recall@k`, `f1@k`, `recall_precision@k`, and `ndcg@k`—for assessing system predictions against the released gold-standard annotations.
+- [**evaluation**](./evaluation): Evaluation scripts providing quantitative metrics—`precision@k`, `recall@k`, `f1@k`, `recall_precision@k`, and `ndcg@k`—for assessing system predictions against the released gold-standard annotations.
 
 
 <!-- ## 📧 Contact
