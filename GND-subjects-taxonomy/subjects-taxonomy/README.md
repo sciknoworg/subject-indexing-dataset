@@ -1,4 +1,4 @@
-## ⬇️ GND subjects taxonomy related download links
+## GND subjects taxonomy related download links
 
 - [**GND-subjects-schema.json**](./GND-subjects-schema.json): This schema defines the structure and properties for each record in the GND subjects files linked above.
 
