@@ -1,6 +1,6 @@
 ## About
 
-This readme provides the instructionss to obtain the GND Sachbegriff (subject heading) authority records. E.g., file named as `authorities-gnd-sachbegriff_dnbmarc_20240213.mrc.xml`. 
+This readme provides the instructionss to obtain the GND Sachbegriff (subject heading) authority records. E.g., file named as `authorities-gnd-sachbegriff_dnbmarc_yyyymmdd.mrc.xml`. 
 
 ### I] Instructions to download the latest GND Sachbegriff file
 
@@ -100,7 +100,7 @@ A file will be a collection of GND Sachbegriff (subject heading) records. Below 
   </record>
 ```
 
-A file can be expected to contain over a million unique sachbegriff (or subject heading) records. A recent download contained 1,860,338 unique subject heading records.
+A file can be expected to contain over a two hundred thousand unique sachbegriff (or subject heading) records. 
 
 #### GND Sachbegriff Record Interpretation Guide -- How to read a GND Sachbegriff Record?
 
