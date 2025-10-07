@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-xml_file = "..\\..\\authorities-gnd-sachbegriff_dnbmarc_20250916.mrc.xml"
+xml_file = "../authorities-gnd-sachbegriff_dnbmarc_20250916.mrc.xml"
 ns = "{http://www.loc.gov/MARC21/slim}"
 
 count = 0
