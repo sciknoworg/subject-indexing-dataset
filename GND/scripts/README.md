@@ -25,3 +25,4 @@ Use [`subject_gnd_formatting.py`](subject_gnd_formatting.py) to generate the for
    ```bash
    python subject_gnd_formatting.py
    ```
+   This will produce a human-readable JSON file of GND subjects ready for machine learning or semantic processing.
