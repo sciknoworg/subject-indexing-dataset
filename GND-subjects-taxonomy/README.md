@@ -1,16 +1,8 @@
-# 🏷 The GND Subjects Taxonomy
-
 ## 🔍 About
 
 The [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) (Gemeinsame Normdatei in German or Integrated Authority File in English) is an international authority file primarily used by German-speaking libraries to catalog and link information about people, organizations, topics, and works. As a part of Germany's national library network, TIB also relies on the GND for its subject indexing tasks.
 
 Among the various authority files available in the GND, the only one relevant to subject indexing is the `GND Sachbegriff` file. In English, "Sachbegriff" translates to "subject terms."
-
-In the [supplementary-datasets](https://github.com/sciknoworg/llms4subjects/tree/main/supplementary-datasets) folder, particularly in the [gnd-how-to](https://github.com/sciknoworg/llms4subjects/tree/main/supplementary-datasets/gnd-how-to) subfolder, we provide detailed step-by-step instructions on how to access the raw data for the GND Sachbegriff file. Using that raw data, we have created a human-readable, decoded version, which participants of the **LLMs4Subjects** shared task can directly download from this repository and use.
-
-Additionally, the `scripts` folder in this repository includes the Python script we used to convert the raw, heavily coded data into the human-readable format that is provided for the shared task. This script is available for participants who may wish to reproduce the workflow or gain a deeper understanding of the process.
-
-The GND subjects taxonomy should be utilized by participants as a comprehensive knowledge base of subjects used for tagging TIB technical records.
 
 In addition to the json-Exports of the GND, the German National Library (DNB) has created an **unofficial** Export of the GND from its native raw format into SKOS for the use within this shared Task. These exports are aligned to the other files as a full version with all subject terms (`GND Sachbegriff`) in the file `GND-Subjects-all_dnb-skos.ttl`.
 
@@ -23,6 +15,8 @@ Remarks on the SKOS-Mapping:
 
 ## 📂 Repositories Included
 
-- [**gnd-how-to**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/gnd-how-to): 
-- [**subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/subjects-taxonomy): Contains the human-readable, comprehensive GND subjects taxonomy files.
-- [**scripts**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/scripts): Contains the Python script used to recreate the human-readable GND files from raw data.
+- [**gnd-how-to**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/gnd-how-to): Provides detailed, step-by-step instructions on how to access and download the raw data for the GND *Sachbegriff* (subject term) file from the original source. This guide helps users understand the provenance and structure of the underlying authority data.
+
+- [**subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/subjects-taxonomy): Contains the fully decoded, human-readable version of the GND subjects taxonomy. These files provide a comprehensive mapping of subject identifiers to their corresponding labels and hierarchical relations, enabling straightforward use in machine learning or knowledge graph applications.
+
+- [**scripts**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/scripts): Includes the Python script used to recreate the human-readable GND taxonomy files from the raw *Sachbegriff* data. This script is provided for participants who wish to reproduce the preprocessing workflow, verify the data transformation, or gain a deeper understanding of how the GND taxonomy was converted into its final usable format.
