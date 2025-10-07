@@ -7,15 +7,19 @@ This dataset empowers the research community 🤝 to build advanced LLM-based se
 
 ## 📂 Repositories Included
 
-To support the development of systems, we release two types of datasets:
+To support system development, we release three key components:
 
-- [**GND-subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy): This subfolder includes the human-readable formatted GND subjects taxonomy. 
+- [**GND-subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy):  
+  Human-readable formatted version of the GND subjects taxonomy.
 
-- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset): This subfolder contains open access annotated technical records as pre-created train/dev/test splits. A large-scale dataset of technical records from a library's open-access collection, annotated with domains and GND subjects, available in both English and German. While the overall collection includes various types of technical records, this dataset is restricted to the most representative five types as follows: `article`, `book`, `conference`, `report`, and `thesis`. 
+- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset):  
+  Open-access annotated technical records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with GND subjects and domain labels. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
 
-Both the GND and the open-access records have been reorganized, formatted with human-readable tags, and released as a community dataset for machine learning development. Standardized library taxonomies often rely on age-old identifier codes that are difficult to interpret ⏳. In consultation with subject specialists, we have therefore preprocessed both the taxonomy and the records, converting their fine-grained coding into clear, human-readable formats. This enables researchers to focus on the core machine learning challenge—downloading the data and getting started right away—rather than spending weeks decoding complex formats.
+  Both the GND taxonomy and the open-access records have been reorganized and reformatted with human-readable tags for seamless machine learning use. Since standardized library taxonomies often rely on complex legacy codes ⏳, we consulted subject specialists to preprocess and simplify the data. This allows researchers to focus on developing ML models rather than decoding intricate data formats.
 
-- [**evaluation**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/evaluation): This subfolder contains the evaluation script with quantitative metrics viz. precision@k, recall@k, f1@k, recall_precision@k, and ndcg@k which are relevant to information retrieval systems and which can be applied to the system predictions when applied to our released gold-standard annotated dataset to get performance scores for subject indexing.
+- [**evaluation**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/evaluation):  
+  Evaluation scripts providing quantitative metrics—`precision@k`, `recall@k`, `f1@k`, `recall_precision@k`, and `ndcg@k`—for assessing system predictions against the released gold-standard annotations.
+
 
 <!-- ## 📧 Contact
 
