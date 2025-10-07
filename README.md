@@ -2,28 +2,20 @@
 
 ## 💡 About
 
-This dataset is created to enable the research community 🤝 to develop cutting-edge, LLM-based semantic solutions for automated subject indexing and classification 📑 of technical records sourced from a national library in Germany where the records are available predominantly in German or English natural languages but not retricted to these. 
-
-For the subjects taxonomy we rely on the [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) (Gemeinsame Normdatei in German or Integrated Authority File in English), an international authority file primarily used by German-speaking libraries to catalog and link information on people, organizations, topics, and works.
-
-
-To support the development of systems, we release two types of datasets:
-
-1. **Curated, human-readable form of the GND subjects taxonomy.**
-2. **A large-scale dataset of technical records from a library's open-access collection, annotated with domains and GND subjects, available in both English and German.**
-
-While the overall collection includes various types of technical records, this dataset is restricted to the most representative five types as follows: `article`, `book`, `conference`, `report`, and `thesis`. 
-
-Both the GND and the open-access records have been reorganized, formatted with human-readable tags, and released as a community dataset for machine learning development. Standardized library taxonomies often rely on age-old identifier codes that are difficult to interpret ⏳. In consultation with subject specialists, we have therefore preprocessed both the taxonomy and the records, converting their fine-grained coding into clear, human-readable formats. This enables researchers to focus on the core machine learning challenge—downloading the data and getting started right away—rather than spending weeks decoding complex formats.
+This dataset empowers the research community 🤝 to build advanced LLM-based semantic solutions for automated subject indexing and classification 📑 of technical records from a German national library. The records are mainly in German or English but not limited to these languages. For the subject taxonomy, we rely on the [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) (Gemeinsame Normdatei / Integrated Authority File), an international authority file widely used by German-speaking libraries to catalog and link information on people, organizations, topics, and works.
 
 
 ## 📂 Repositories Included
 
+To support the development of systems, we release two types of datasets:
+
 - [**GND-subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy): This subfolder includes the human-readable formatted GND subjects taxonomy. 
 
-- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset): This subfolder contains open access annotated technical records as precreated train/dev/test splits
+- [**technical-records-dataset**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/technical-records-dataset): This subfolder contains open access annotated technical records as pre-created train/dev/test splits. A large-scale dataset of technical records from a library's open-access collection, annotated with domains and GND subjects, available in both English and German. While the overall collection includes various types of technical records, this dataset is restricted to the most representative five types as follows: `article`, `book`, `conference`, `report`, and `thesis`. 
 
-- [**eval-script**](https://github.com/jd-coderepos/subject-indexing/tree/main/eval-script): This subfolder contains the evaluation script with quantitative metrics viz. precision@k, recall@k, f1@k, recall_precision@k, and ndcg@k which are relevant to information retrieval systems and which can be applied to the system predictions when applied to our released gold-standard annotated dataset to get performance scores for subject indexing.
+Both the GND and the open-access records have been reorganized, formatted with human-readable tags, and released as a community dataset for machine learning development. Standardized library taxonomies often rely on age-old identifier codes that are difficult to interpret ⏳. In consultation with subject specialists, we have therefore preprocessed both the taxonomy and the records, converting their fine-grained coding into clear, human-readable formats. This enables researchers to focus on the core machine learning challenge—downloading the data and getting started right away—rather than spending weeks decoding complex formats.
+
+- [**evaluation**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/evaluation): This subfolder contains the evaluation script with quantitative metrics viz. precision@k, recall@k, f1@k, recall_precision@k, and ndcg@k which are relevant to information retrieval systems and which can be applied to the system predictions when applied to our released gold-standard annotated dataset to get performance scores for subject indexing.
 
 <!-- ## 📧 Contact
 
