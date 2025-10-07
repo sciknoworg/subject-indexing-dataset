@@ -67,5 +67,5 @@ def convert_to_skos_graph(json_filepath, rdf_filepath, rdf_format='turtle'):
     graph.serialize(rdf_filepath, format=rdf_format)
 
 # Convert all subjects to SKOS
-convert_to_skos_graph('../dataset/GND-Subjects-all.json',
-                      '../dataset/GND-Subjects-all-skos.ttl')
+convert_to_skos_graph('../subjects-taxonomy/GND-subjects.json',
+                      '../subjects-taxonomy/GND-subjects-skos.ttl')
