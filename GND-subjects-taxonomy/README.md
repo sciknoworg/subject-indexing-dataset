@@ -23,6 +23,6 @@ Remarks on the SKOS-Mapping:
 
 ## 📂 Repositories Included
 
-- [**gnd-how-to**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/gnd-how-to)
-- [**dataset**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/GND/dataset): Contains the human-readable, comprehensive GND subjects taxonomy files.
-- [**scripts**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/GND/scripts): Contains the Python script used to recreate the human-readable GND files from raw data.
+- [**gnd-how-to**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/gnd-how-to): 
+- [**subjects-taxonomy**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/subjects-taxonomy): Contains the human-readable, comprehensive GND subjects taxonomy files.
+- [**scripts**](https://github.com/sciknoworg/subject-indexing-dataset/tree/main/GND-subjects-taxonomy/scripts): Contains the Python script used to recreate the human-readable GND files from raw data.
