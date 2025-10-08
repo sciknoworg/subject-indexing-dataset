@@ -15,7 +15,7 @@ Note that this dataset is obtained from an actual public library. This has impli
 
 ## 🧐 A Guide to Reading the Library Records
 
-Each library record is provided in `json-ld` format. You can view an example English record [train/Article/en/3A1499846525.jsonld](./data/train/Article/en/3A1499846525.jsonld) and an example German record [train/Article/de/3A1666713376.jsonld](./data/train/Article/de/3A1666713376.jsonld). 
+Each library record is provided in `json-ld` format. You can view an example English record [dev/Conference/en/3A019447183.jsonld](./data/dev/Conference/en/3A019447183.jsonld) and an example German record [dev/Thesis/de/3A011101717.jsonld](./data/dev/Thesis/de/3A011101717.jsonld). 
 
 Each record contains various metadata items. The important ones are the following. 1) For the tag `subject` with a list of values, just the strings with prefix "(classificationName=linsearch:mapping).." This is relevant for the domain classification task. 28 total domains are considered within this library system. Also note that a record can have multiple domains annotated. Therefore this is a multi-class classification task. Note 314 records lack domain annotations. The list of these records can be found [here](./data-statistics/Records_without_Domains.json) and must be excluded from training. 2) Tag `dcterms:subject` which is a list of GND IDs that defines the objective of the subject indexing task. And, 3) tags `title` and `abstract` for obviuous reasons being the data points as input to the classification algorithm.
 
