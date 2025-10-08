@@ -1,4 +1,4 @@
-# 📑 Subject Classification Dataset of Library Records
+# 📑 Dataset of Library Records for Subject Classification
 
 ## 🔍 About
 
@@ -8,8 +8,6 @@ The XYZ library—one of the national libraries in Germany—indexes its technic
 
 - [**data**](./data): Contains the library records in jsonld format in precreated train/dev/test splits for experimental purposes. The `train dataset` contains 90,452 records, `dev dataset` contains 19,949 records and the `test dataset` contains 27,998 records. 
 
-Each record contains various metadata items. The important ones are the following. 1) For the tag `subject` with a list of values, just the strings with prefix "(classificationName=linsearch:mapping).." This is relevant for the domain classification task. 28 total domains are considered within this library system. Also note that a record can have multiple domains annotated. Therefore this is a multi-class classification task. Note 314 records lack domain annotations. The list of these records can be found [here](./data-statistics/Records_without_Domains.json) and must be excluded from training. 2) Tag `dcterms:subject` which is a list of GND IDs that defines the objective of the subject indexing task. And, 3) tags `title` and `abstract` for obviuous reasons being the data points as input to the classification algorithm.
-
 Note that this dataset is obtained from an actual public library. This has implications for its quality and is reflective of the real-world in the sense that it has been created longitudinally over the lifetime of this library. This also means that over time there have been changes in subject matter expert library staff etc. Nevertheless, it presents a valuable resource to the community to build reliable AI tools for librarians, where the design of the AI tools is formulated based on the overall pattern of the data and additional reasoning, rather than being thrown off course by particularities. 
 
 - [**data-statistics**](./data-statistics/): Various stats insights into the domain and subject annotations of the library records dataset.
@@ -17,29 +15,29 @@ Note that this dataset is obtained from an actual public library. This has impli
 
 ## 🧐 A Guide to Reading the Library Records
 
-Each TIBKAT technical record in the repositories is provided in `json-ld` format. You can view an example English record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/en/3A1499846525.jsonld) and an example German record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/de/3A168396733X.jsonld). These files contain various property annotations, with the four most relevant to **LLMs4Subjects** being `title`, `abstract`, `dcterms:subject` and `subject`. Participants are free to use other properties as needed. This guide provides an overview of how to interpret a TIBKAT record, focusing on the `dcterms:subject` and `subject` properties.
+Each library record is provided in `json-ld` format. You can view an example English record [train/Article/en/3A1499846525.jsonld](./data/train/Article/en/3A1499846525.jsonld) and an example German record [train/Article/de/3A1666713376.jsonld](./data/train/Article/de/3A1666713376.jsonld). 
 
-### Understanding the Subject Properties
+Each record contains various metadata items. The important ones are the following. 1) For the tag `subject` with a list of values, just the strings with prefix "(classificationName=linsearch:mapping).." This is relevant for the domain classification task. 28 total domains are considered within this library system. Also note that a record can have multiple domains annotated. Therefore this is a multi-class classification task. Note 314 records lack domain annotations. The list of these records can be found [here](./data-statistics/Records_without_Domains.json) and must be excluded from training. 2) Tag `dcterms:subject` which is a list of GND IDs that defines the objective of the subject indexing task. And, 3) tags `title` and `abstract` for obviuous reasons being the data points as input to the classification algorithm.
 
-Each TIBKAT technical record contains the properties `subject` and `dcterms:subject`, which describes the domains and topics covered by a given resource. These properties are essential for ensuring that systems perform effectively in both Subtask 1 and Subtask 2.
+### Reading 
 
-#### [The TIBKAT Domain Property for Subtask 1 - Multi-domain Classification](#how-to-domains)
+Each record from the library collections contains the properties `subject` and `dcterms:subject`, which describes the domains and topics covered by a given resource. 
 
-The `subject` property includes keywords, phrases, or classification codes that reflect the content. Subject annotations in TIBKAT records are provided by a team of 17 expert subject specialists, covering 28 different subjects, including:
+#### [Subtask 1 - Multi-domain Classification](#how-to-domains)
+
+The `subject` property includes keywords, phrases, or classification codes that reflect the content. Subject annotations within this library are provided by a team of 17 expert subject specialists, covering 28 different subjects as follows:
 
 - Architecture, Civil Engineering, Biochemistry, Biology, Chemistry, Chemical Engineering, Electrical Engineering, Energy Technology, Educational Science, Earth Sciences, History, Information Technology, Literary Studies and Linguistics, Mechanical Engineering, Mathematics, Medical Technology, Plant Sciences, Philosophy, Physics, Law, Study of Religions, Social Sciences, Sports Sciences, Theology, Environmental Engineering, Traffic Engineering, Materials Science, and Economics.
 
-For this edition of the shared task and specifically for Subtask 1, only domains related to Fachsystematik LinSearch should be considered. More information about Fachsystematik LinSearch can be found [here](https://terminology.tib.eu/ts/ontologies/linsearch).
-
-#### [The `dcterms:subject` Property for Subtask 2 - Subject Indexing](#how-to-subjects)
+#### [Subtask 2 - Subject Indexing](#how-to-subjects)
 
 The `dcterms:subject` property (often represented as `<dc:subject>` in XML or similar formats) describes the subjects or topics covered by the resource. 
 
 #### How to Read the `dcterms:subject` Property
 
-1. **Access the TIBKAT Record:** Start by accessing the JSON-LD TIBKAT records in the dataset or supplementary dataset folders.
+1. **Access the Record:** Start by accessing the JSON-LD records in the data folder.
 
-2. **Locate the `dcterms:subject` Property:** Find the `dcterms:subject` property in the record. This property may contain one or more subject headings, each sourced from the GND Sachbegriff (subject headings) taxonomy. More information on GND and its role in TIBKAT can be found in the GND shared task dataset subfolder.
+2. **Locate the `dcterms:subject` Property:** Find the `dcterms:subject` property in the record. This property may contain one or more subject headings, each sourced from the GND Sachbegriff (subject headings) taxonomy. More information on GND can be found in the dedicated GND subfolder.
 
 3. **Interpret the Subject Entries:** Each entry under the `dcterms:subject` property represents a subject or topic relevant to the resource. These are typically classification codes from the GND subject headings.
 
@@ -47,7 +45,7 @@ The `dcterms:subject` property (often represented as `<dc:subject>` in XML or si
 
 ### Conclusion
 
-Understanding the `dcterms:subject` and `subject` property within TIBKAT records is crucial for researchers, librarians, and anyone working on categorizing or finding resources by subject. By focusing on this property, users can gain insights into the content and relevance of the resources cataloged in the TIBKAT system.
+Understanding the `dcterms:subject` and `subject` property within these library records is crucial for researchers, librarians, and anyone working on categorizing or finding resources by subject. By focusing on this property, users can gain insights into the content and relevance of the resources cataloged in this library system.
 
 # 📊 Some Statistics for the Dataset
 
@@ -126,9 +124,9 @@ The table below shows the minimum, maximum, and mean length of abstracts in diff
 |        | Thesis      | de       | 6   | 1,705| 156.4 |
 |        |             | en       | 6   | 1,646| 183.4 |
 
-## TIBKAT Record Domain's Statistics
+## Domain Statistics
 
-The table below presents the minimum, maximum, and average number of domains per record in the all-subjects data collection for **Subtask 1 – TIBKAT Multi-Domain Classification**:
+The table below presents the minimum, maximum, and average number of domains per record.
 
 | Split  | Record Type | Language | Min | Max | Mean |
 |--------|-------------|----------|-----|-----|------|
