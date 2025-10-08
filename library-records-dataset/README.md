@@ -1,20 +1,21 @@
-# 📑 The **LLMs4Subjects** Shared Task TIBKAT Dataset
+# 📑 Subject Classification Dataset of Library Records
 
 ## 🔍 About
 
-TIB subject matter experts index the library’s technical records based on the GND subjects taxonomy. Early in the development of TIB's record annotation guidelines, certain GND subject classes were identified as core to TIB’s focus. However, as technical sciences have advanced, TIB records are now annotated with GND subjects that go beyond those original core subject classes.
+The XYZ library—one of the national libraries in Germany—indexes its technical records using the GND subjects taxonomy. Initially, a set of core GND subject classes was defined to guide this process, but as the technical sciences evolved, the library’s records have grown to include subjects beyond these original core areas.
 
 ## 📂 Repositories Included
 
-- [**all-subjects**](https://github.com/sciknoworg/llms4subjects/tree/main/shared-task-datasets/TIBKAT/all-subjects) **dataset:** The `train dataset` contains 90,452 records, `dev dataset` contains 19,949 records and the `test dataset` contains 27,998 records. This dataset is a superset of the dataset linked below and includes all annotated records without restrictions.
+- [**data**](./data): Contains the library records in jsonld format in precreated train/dev/test splits for experimental purposes. The `train dataset` contains 90,452 records, `dev dataset` contains 19,949 records and the `test dataset` contains 27,998 records. 
 
-For Subtask 1 - Multi-domain Classification, participants are required to use all-subjects dataset, as it encompasses all 28 predefined domains, providing systems with a broader distribution of data records. However, there are some exceptions. Specifically, a small subset of records does not include domain information in its metadata. Out of the 110,401 records in the train and development splits, only 314 records lack domain details. The list of these records can be found [here](all-subjects/data-statistics/Records_without_Domains.json).
+Each record contains various metadata items. The important ones are the following. 1) For the tag `subject` with a list of values, just the strings with prefix "(classificationName=linsearch:mapping).." This is relevant for the domain classification task. 28 total domains are considered within this library system. Also note that a record can have multiple domains annotated. Therefore this is a multi-class classification task. Note 314 records lack domain annotations. The list of these records can be found [here](./data-statistics/Records_without_Domains.json) and must be excluded from training. 2) Tag `dcterms:subject` which is a list of GND IDs that defines the objective of the subject indexing task. And, 3) tags `title` and `abstract` for obviuous reasons being the data points as input to the classification algorithm.
 
-For Subtask 2 - Subject Indexing, participants are required to use all-subject dataset for subject indexing.
+Note that this dataset is obtained from an actual public library. This has implications for its quality and is reflective of the real-world in the sense that it has been created longitudinally over the lifetime of this library. This also means that over time there have been changes in subject matter expert library staff etc. Nevertheless, it presents a valuable resource to the community to build reliable AI tools for librarians, where the design of the AI tools is formulated based on the overall pattern of the data and additional reasoning, rather than being thrown off course by particularities. 
 
-The dataset folder is organized into two directories: `data`, which contains the actual dataset files, and `data-statistics`, which provides detailed statistical analyses on various aspects of the dataset.
+- [**data-statistics**](./data-statistics/): Various stats insights into the domain and subject annotations of the library records dataset.
 
-## 🧐 A Guide to Reading TIBKAT Records
+
+## 🧐 A Guide to Reading the Library Records
 
 Each TIBKAT technical record in the repositories is provided in `json-ld` format. You can view an example English record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/en/3A1499846525.jsonld) and an example German record [here](https://github.com/sciknoworg/llms4subjects/blob/main/shared-task-datasets/TIBKAT/all-subjects/data/train/Article/de/3A168396733X.jsonld). These files contain various property annotations, with the four most relevant to **LLMs4Subjects** being `title`, `abstract`, `dcterms:subject` and `subject`. Participants are free to use other properties as needed. This guide provides an overview of how to interpret a TIBKAT record, focusing on the `dcterms:subject` and `subject` properties.
 
