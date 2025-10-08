@@ -1,0 +1,30 @@
+Abbreviation,IRI,Full Form
+arc,https://purl.org/linsearch/arc,Architecture
+bau,https://purl.org/linsearch/bau,Civil engineering
+che,https://purl.org/linsearch/che,Chemistry
+elt,https://purl.org/linsearch/elt,Electrical engineering
+fer,https://purl.org/linsearch/fer,Material science
+his,https://purl.org/linsearch/his,History
+inf,https://purl.org/linsearch/inf,Computer Science
+lin,https://purl.org/linsearch/lin,Linguistics
+lit,https://purl.org/linsearch/lit,Literature Studies
+mat,https://purl.org/linsearch/mat,Mathematics
+oek,https://purl.org/linsearch/oek,Economics
+pae,https://purl.org/linsearch/pae,Educational Science
+phi,https://purl.org/linsearch/phi,Philosophy
+phy,https://purl.org/linsearch/phy,Physics
+sow,https://purl.org/linsearch/sow,Social Sciences
+tec,https://purl.org/linsearch/tec,Engineering
+ver,https://purl.org/linsearch/ver,Traffic engineering
+ber,https://purl.org/linsearch/ber,Mining
+bio,https://purl.org/linsearch/bio,Life Sciences
+cet,https://purl.org/linsearch/cet,Chemical and environmental engineering
+geo,https://purl.org/linsearch/geo,Earth Sciences
+hor,https://purl.org/linsearch/hor,Horticulture
+jur,https://purl.org/linsearch/jur,Law
+mas,https://purl.org/linsearch/mas,"Mechanical engineering, energy technology"
+med,https://purl.org/linsearch/med,Medical technology
+meda,https://purl.org/linsearch/meda,Medicine
+rel,https://purl.org/linsearch/rel,Study of religions
+spo,https://purl.org/linsearch/spo,Sports Science
+rest,https://purl.org/linsearch/rest,Other subjects
