@@ -2,8 +2,7 @@
 
 ## 💡 About
 
-This dataset empowers the research community 🤝 to build advanced LLM-based semantic solutions for automated subject indexing and classification 📑 of library records from a German national library. The records are mainly in German or English but not limited to these natural languages. For the subject taxonomy, we rely on the [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) (Gemeinsame Normdatei / Integrated Authority File), an international authority file widely used by German-speaking libraries to catalog and link information on people, organizations, topics, and works.
-
+This dataset empowers the research community 🤝 to build advanced LLM-based semantic solutions for automated domain classification and subject indexing 📑 of library records from a national library in Germany. The records are mainly in German or English but not limited to these natural languages. For the subject taxonomy, we rely on the [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) (Gemeinsame Normdatei / Integrated Authority File), an international authority file widely used the in German-speaking library systems to catalog and link information on people, organizations, topics, and works.
 
 ## 📂 Repositories Included
 
