@@ -1,23 +1,31 @@
-Sum of Count,Column Labels,,
-Row Labels,en,de,Grand Total
-Article,1638,8,1646
-train,1042,6,1048
-dev,173,1,174
-test,423,1,424
-Book,39045,52549,91594
-train,26966,33401,60367
-dev,4482,5589,10071
-test,7597,13559,21156
-Conference,5028,3489,8517
-train,3619,2210,5829
-dev,601,371,972
-test,808,908,1716
-Report,1824,2288,4112
-train,1275,1507,2782
-dev,215,256,471
-test,334,525,859
-Thesis,4863,12869,17732
-train,3452,8459,11911
-dev,574,1404,1978
-test,837,3006,3843
-Grand Total,52398,71203,123601
+Split,Type,Lang,Count,Total Record
+train,Article,en,1042,81937
+train,Article,de,6,81937
+train,Book,en,26966,81937
+train,Book,de,33401,81937
+train,Conference,en,3619,81937
+train,Conference,de,2210,81937
+train,Report,en,1275,81937
+train,Report,de,1507,81937
+train,Thesis,en,3452,81937
+train,Thesis,de,8459,81937
+dev,Article,en,173,13666
+dev,Article,de,1,13666
+dev,Book,en,4482,13666
+dev,Book,de,5589,13666
+dev,Conference,en,601,13666
+dev,Conference,de,371,13666
+dev,Report,en,215,13666
+dev,Report,de,256,13666
+dev,Thesis,en,574,13666
+dev,Thesis,de,1404,13666
+test,Article,en,423,27998
+test,Article,de,1,27998
+test,Book,en,7597,27998
+test,Book,de,13559,27998
+test,Conference,en,808,27998
+test,Conference,de,908,27998
+test,Report,en,334,27998
+test,Report,de,525,27998
+test,Thesis,en,837,27998
+test,Thesis,de,3006,27998
