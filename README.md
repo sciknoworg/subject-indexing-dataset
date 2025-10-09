@@ -6,11 +6,13 @@ This dataset empowers the research community 🤝 to build advanced LLM-based se
 
 ## 📂 Repositories Included
 
-To support system development, we release three key components:
+To support system development, we release four key components:
 
-- [**GND**](./GND): Related resources to the GND including human-readable formatted version of the GND subjects taxonomy.
+- [**28_domains_list.csv**](28_domains_list.csv): This file lists 28 domains representing the coarse-grained classification scheme applied to the library records. A record can be assigned more than one domain.
 
-- [**library-records-dataset**](./library-records-dataset): Open-access annotated library records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with GND subjects and domain labels. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
+- [**GND**](./GND): Resources related to the GND, including a human-readable version of the GND subject taxonomy. The taxonomy comprises over 200,000 subject headings and serves as the controlled vocabulary for fine-grained subject indexing of the library’s bibliographic records.
+
+- [**library-records-dataset**](./library-records-dataset): Open-access annotated library records with pre-defined train/dev/test splits. The dataset includes records in German and English, annotated with domain labels and GND subjects. It covers five representative record types: `article`, `book`, `conference`, `report`, and `thesis`.
 
   Both the GND taxonomy and the open-access records have been reorganized and reformatted with human-readable tags for seamless machine learning use. Since standardized library taxonomies often rely on complex legacy codes ⏳, we consulted subject specialists to preprocess and simplify the data. This allows researchers to focus on developing ML models rather than decoding intricate data formats.
 
