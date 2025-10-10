@@ -66,7 +66,6 @@ def build_id_to_name_map(graph):
             if isinstance(same, str):
                 m[item["@id"]] = same
             elif isinstance(same, list):
-                # take first string if any
                 for v in same:
                     if isinstance(v, str):
                         m[item["@id"]] = v
@@ -84,7 +83,6 @@ def extract_subject_ids(graph):
         subj = item.get("dcterms:subject")
         if subj is None:
             continue
-        # subj can be a list of dicts or a single dict
         if isinstance(subj, list):
             for s in subj:
                 if isinstance(s, dict) and "@id" in s:
@@ -95,9 +93,7 @@ def extract_subject_ids(graph):
 
 
 def walk_files(base_dir):
-    """
-    Yield (type, lang, filepath) under base_dir for the configured DOC_TYPES/LANGS.
-    """
+    """Yield (type, lang, filepath) under base_dir for the configured DOC_TYPES/LANGS."""
     for doc_type in DOC_TYPES:
         for lang in LANGS:
             lang_dir = os.path.join(base_dir, doc_type, lang)
@@ -115,7 +111,7 @@ def main():
     # subject_counts: subject_id -> {"name": str, "train": int, "dev": int, "test": int}
     subject_counts = defaultdict(lambda: {"name": None, "train": 0, "dev": 0, "test": 0})
 
-    # Also track per-split sets for overlap
+    # Also track per-split sets for (binary) Jaccard
     split_sets = {"train": set(), "dev": set(), "test": set()}
 
     for split, base_dir in bases.items():
@@ -135,17 +131,15 @@ def main():
             if not subj_ids:
                 continue
 
-            # Count presence per file (dedup already as a set)
+            # Presence count per file (deduplicated within file)
             for sid in subj_ids:
-                # prefer name if available; else fallback to ID
                 name = id2name.get(sid, sid)
                 entry = subject_counts[sid]
                 if entry["name"] is None:
                     entry["name"] = name
-                # increment split presence count by 1 (per-file presence)
                 entry[split] += 1
 
-            # Track set membership for overlap
+            # Track membership for (binary) overlap
             split_sets[split].update(subj_ids)
 
     # -------- Build subjects_by_split.csv --------
@@ -172,7 +166,7 @@ def main():
     subjects_csv_path = os.path.join(out_dir, SUBJECTS_CSV)
     subjects_df.to_csv(subjects_csv_path, index=False)
 
-    # -------- Build split_overlap_summary.csv --------
+    # -------- Overlap metrics (binary Jaccard + weighted Jaccard) --------
     train_set = split_sets.get("train", set())
     dev_set   = split_sets.get("dev", set())
     test_set  = split_sets.get("test", set())
@@ -181,6 +175,19 @@ def main():
         if not a and not b:
             return 1.0
         return len(a & b) / len(a | b) if (a or b) else 0.0
+
+    # NEW: weighted jaccard over nonnegative count vectors
+    def weighted_jaccard(count_key_x: str, count_key_y: str) -> float:
+        min_sum = 0
+        max_sum = 0
+        for rec in subject_counts.values():
+            x = rec[count_key_x]
+            y = rec[count_key_y]
+            min_sum += min(x, y)
+            max_sum += max(x, y)
+        if max_sum == 0:
+            return 1.0  # both zero everywhere
+        return round(min_sum / max_sum, 4)
 
     overlap_rows = [
         {"Metric": "Train_Size", "Value": len(train_set)},
@@ -196,12 +203,16 @@ def main():
         {"Metric": "Jaccard_Train_Dev", "Value": round(jaccard(train_set, dev_set), 4)},
         {"Metric": "Jaccard_Train_Test", "Value": round(jaccard(train_set, test_set), 4)},
         {"Metric": "Jaccard_Dev_Test", "Value": round(jaccard(dev_set, test_set), 4)},
+        # NEW: weighted Jaccard (Tanimoto) using per-subject presence counts
+        {"Metric": "WeightedJaccard_Train_Dev", "Value": weighted_jaccard("train", "dev")},
+        {"Metric": "WeightedJaccard_Train_Test", "Value": weighted_jaccard("train", "test")},
+        {"Metric": "WeightedJaccard_Dev_Test", "Value": weighted_jaccard("dev", "test")},
     ]
     overlap_df = pd.DataFrame(overlap_rows)
     overlap_csv_path = os.path.join(out_dir, OVERLAP_CSV)
     overlap_df.to_csv(overlap_csv_path, index=False)
 
-    # -------- Build outliers_by_subject.csv --------
+    # -------- Outliers --------
     outlier_rows = []
     for sid, rec in subject_counts.items():
         tr, dv, ts = rec["train"], rec["dev"], rec["test"]
