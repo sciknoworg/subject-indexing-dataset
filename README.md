@@ -29,14 +29,17 @@ If **TIB-SID** useful for your research or project, please consider citing it.
 The main dataset paper is listed below. It has been **accepted to [LREC 2026](https://lrec2026.info/)**, and the official proceedings citation will be added here as soon as it is available.
 
 ```bibtex
-@misc{dsouza2026extrememultilabeltextclassification,
-      title={An Extreme Multi-label Text Classification (XMTC) Library Dataset: What if we took "Use of Practical AI in Digital Libraries" seriously?}, 
-      author={Jennifer D'Souza and Sameer Sadruddin and Maximilian Kähler and Andrea Salfinger and Luca Zaccagna and Francesca Incitti and Lauro Snidaro and Osma Suominen},
-      year={2026},
-      eprint={2603.10876},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2603.10876}, 
+@inproceedings{dsouza-etal-2026-extreme,
+  title = {An Extreme Multi-label Text Classification (XMTC) Library Dataset: What If We Took "Use of Practical AI in Digital Libraries" Seriously?},
+  author = {D'Souza, Jennifer and Sadruddin, Sameer and Kaehler, Maximilian and Salfinger, Andrea and Zaccagna, Luca and Incitti, Francesca and Snidaro, Lauro and Suominen, Osma},
+  booktitle = {Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)},
+  month = {May},
+  year = {2026},
+  pages = {169--184},
+  address = {Palma, Mallorca, Spain},
+  publisher = {European Language Resources Association (ELRA)},
+  editor = {Piperidis, Stelios and Bel, Núria and van den Heuvel, Henk and Ide, Nancy and Krek, Simon and Toral, Antonio},
+  doi = {10.63317/5kag6gjg636f},
 }
 ```
 
